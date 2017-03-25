@@ -59,4 +59,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: 'templates/post-detail.html',
         controller: 'PostDetailCtrl'
     })
+
+    .state('schedule', {
+    	url: '/schedule',
+    	templateUrl: 'templates/schedule.html',
+    	controller: 'ScheduleCtrl'
+    })
 });

@@ -7,3 +7,7 @@ angular.module('starter.controllers', ['starter.services'])
 .controller('PostDetailCtrl', function ($scope, $stateParams, Posts) {
     $scope.post = Posts.get($stateParams.postId);
 })
+
+.controller('ScheduleCtrl', function ($scope, Schedules) {
+	Schedules.all($scope);
+})
