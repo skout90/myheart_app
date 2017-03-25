@@ -27,22 +27,6 @@ angular.module('starter.services', [])
     };
 
     return Schedules;
-    
-    /*return {
-    	all: function () {
-    		var result = ajax.post('http://127.0.0.1/schedule/SelectScheduleList.do', '');
-            result.success(function(data, status, headers, config) {
-            	console.log(result);
-            	console.log(data);
-            	schedules = data;
-            	return schedules;
-            });
-            result.error(function(data, status, headers, config) {
-            	console.log(status);
-            	return null;
-            });
-		}
-	};*/
 }])
 
 .factory('Posts', function () {

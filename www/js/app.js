@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     $stateProvider
 
     // setup an abstract state for the tabs directive
-        .state('test', {
+    .state('test', {
         url: '/test',
         templateUrl: 'templates/test.html'
     })
@@ -64,5 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     	url: '/schedule',
     	templateUrl: 'templates/schedule.html',
     	controller: 'ScheduleCtrl'
-    })
+    });
+    
+    $urlRouterProvider.otherwise('/');
 });
