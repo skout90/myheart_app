@@ -17,7 +17,7 @@ angular.module('starter.services', [])
     var Schedules = {};
 
     Schedules.all = function ($scope) {
-    	var result = ajax.post(urlBase + '/SelectScheduleList.do', '');
+    	var result = ajax.post(urlBase + '/selectScheduleList.do', '');
     	result.success(function(data, status, headers, config) {
     		$scope.schedules = data;
     	});
