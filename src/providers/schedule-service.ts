@@ -12,7 +12,7 @@ export class ScheduleService {
     
     getSchedules(): Observable<Schedule[]> {
         return this.http
-          .get('http://localhost/schedule/selectScheduleList.do')
+          .get('http://localhost/schedule/list.do')
           .delay(2000)
           .map((res: Response) => res.json());
     }
