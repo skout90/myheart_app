@@ -1,15 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//connect.facebook.net/ko_KR/sdk.js"></script>
+</head>
+
+<body>
+
 <ion-header>
-    <ion-navbar>
-        <button menuToggle ion-button icon-only>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>IYLM 메인 페이지</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+  
+  <div  class="row row-center">
+		<div class="col col-center">
+	  			<form (ngSubmit)="ngOnInit()">
+				   <ion-item> 
+				    <ion-label color="primary">ID</ion-label>
+				    <ion-input type="text" name="id" [(ngModel)]="login.loginUserId"  placeholder="please, write you ID">{{id}}</ion-input>
+				   </ion-item>
+				  <ion-item> 
+				    <ion-label color="primary">password</ion-label>
+				    <ion-input type="password" name="password" [(ngModel)]="login.loginPassword" placeholder="please, write you password"></ion-input>
+				   </ion-item>
+				   <div  class="col col-center">
+				  	<button ion-button round color="light" id="register">Sign Up</button>
+				  	<button ion-button round color="light" type="submit" id="loginBtn" (click)=doResultLoginChk()>Login</button>
+				  	</div>
+			  </form>
+	  	</div>
+	 </div><br/>
+	  	<div class="row row-center">
+	  		<div class="col col-center">
+<!-- 	  		<button ion-button block color="primary" (click)="doAlert()" id="facebooklogin" class="fb-login-button" data-auto-logout-link="true"> Login with Facebook</button> -->
+	  		<button ion-button full color="primary"  (click)=doFbLogin() > Login with Facebook </button>
+	  		</div>
+	  	</div>
+	  	<div class="row row-center">
+	  		<div class="col col-center">
+	  		<button ion-button block color="dark" (click)=loginForm() > Login with KaKao</button>
+	  		</div>
+	  	</div>
 </ion-header>
 
-<ion-content padding>
-    Improve Your Life by Medicine!
-    <p>
-        Made by 김민균, 남준호, 지선학
-    </p>
-</ion-content>
+<ion-content padding></ion-content>
+  
+</body>
+
+</html>

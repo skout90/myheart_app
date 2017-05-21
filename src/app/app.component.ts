@@ -3,46 +3,60 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { TabsPage } from '../pages/tabs/tabs';
+import { UserPage } from '../pages/user/user';
+import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
-import { SchedulePage } from '../pages/schedule/schedule';
+import { Facebook } from '@ionic-native/facebook';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   templateUrl: 'app.html'
+  
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = TabsPage;
   private pages = {};
   @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(
+   platform: Platform,
+   statusBar: StatusBar, 
+   splashScreen: SplashScreen,
+   nativeStorage:NativeStorage
+  ) {
+  
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      
+      let env = this;
+    /*NativeStorage.getItem('user')
+      .then( function (data) {
+      
+        env.nav.push(UserPage);
+        this.splashScreen.hide();
+      }, function (error) {
+      
+        env.nav.push(HomePage);
+        this.splashScreen.hide();
+      });*/
+      
+      //StatusBar.styleDefault();
     });
     this.pages = {
-        'HomePage': HomePage,
-        'SchedulePage': SchedulePage
+        'UserPage': UserPage
     };
   }
   
-  openPage(pageName) {
-    const component = this.pages[pageName];
-    if (!component) {
-      return;
-    }
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(component);
+    openPage(pageName) {
+	    const component = this.pages[pageName];
+	    if (!component) {
+	      return;
+	    }
+	    
+	    this.nav.setRoot(component);
+
   }
 }
 
 
 
-// WEBPACK FOOTER //
-// ./src/app/app.component.ts
-
-
-// WEBPACK FOOTER //
-// ./src/app/app.component.ts

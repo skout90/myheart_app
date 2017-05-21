@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>가입 사용자</ion-title>
+    </ion-navbar>
+</ion-header>
+​
+<ion-content padding>
+    <button ion-button full color="primary"  (click)=doFbLogout() > Log-out with Facebook </button>
+    <ion-list>
+        <ion-item-group [hidden]="loading">
+            <ion-list-header default>
+                사용자 리스트
+            </ion-list-header>
+​			<ion-grid>
+			<ion-col col-md-3 offset-3>
+            <a ion-item *ngFor="let user of user">
+                <ion-row><h2>{{user.userNo}}</h2></ion-row>
+                <ion-row><h2>{{user.userId}}</h2></ion-row>
+                <ion-row><h2>{{user.snsId }}</h2></ion-row>
+                <ion-row><h2>{{user.snsType }}</h2></ion-row>
+                <ion-row><p>{{user.userName}}</p></ion-row>
+                <ion-row><p>{{user.password}}</p></ion-row>
+                <ion-row><p>{{user.phoneNum}}</p></ion-row>
+                <ion-row><p>{{user.email}}</p></ion-row>
+                <ion-row><p>{{user.reqDt}}</p></ion-row>
+                <!-- <button item-right ion-button icon-only default>
+                    detail
+                </button> -->
+            </a>
+            </ion-col>
+​			</ion-grid>
+        </ion-item-group>
+    </ion-list>
+</ion-content>
