@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Nav, NavController, Refresher, NavParams } from 'ionic-angular';
+import { Nav, NavController, ModalController, Refresher, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 import { LoginService } from '../../providers';
@@ -7,6 +7,7 @@ import { loginResult } from '../../models';
 
 import { UserPage } from '../user/user';
 import { AboutPage } from '../about/about';
+import { DrugboxModal } from '../drugbox/drugbox';
 
 import { Facebook } from '@ionic-native/Facebook';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,6 +33,7 @@ export class HomePage implements OnInit {
 	constructor(
 		public navCtrl: NavController,
 		public navParams: NavParams,
+		public modalCtrl: ModalController,
 		public alertCtrl: AlertController,
 		public loginService: LoginService,
 		private splashScreen: SplashScreen,
@@ -100,11 +102,15 @@ export class HomePage implements OnInit {
 		}
 
 		this.nav.setRoot(component);
-
 	}
 
 	loginForm() {
 		alert(JSON.stringify(this.login))
+	}
+
+	openDrugboxModal() {
+		const modal = this.modalCtrl.create(DrugboxModal);
+		modal.present();
 	}
 
 }

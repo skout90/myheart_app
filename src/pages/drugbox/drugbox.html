@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button (click)="closeModal()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>약품함</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>약품명</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <ion-item class="timeDivision">
+    <ion-label>아침</ion-label>
+    <ion-checkbox [(ngModel)]="morning"></ion-checkbox>
+  </ion-item>
+  <ion-item class="timeDivision">
+    <ion-label>점심</ion-label>
+    <ion-checkbox [(ngModel)]="noon"></ion-checkbox>
+  </ion-item>
+  <ion-item class="timeDivision">
+    <ion-label>저녁</ion-label>
+    <ion-checkbox [(ngModel)]="evening"></ion-checkbox>
+  </ion-item>
+  <ion-item class="timeDivision">
+    <ion-label>심야</ion-label>
+    <ion-checkbox [(ngModel)]="night"></ion-checkbox>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <small>약품을 등록해주세요!</small>
+  </ion-toolbar>
+</ion-footer>

@@ -42,6 +42,10 @@ export class MyApp {
 
       //StatusBar.styleDefault();
     });
+    this.pages = {
+      'HomePage': HomePage,
+      'SchedulePage': SchedulePage
+    };
   }
 
   openPage(pageName) {
@@ -54,6 +58,3 @@ export class MyApp {
 
   }
 }
-
-
-

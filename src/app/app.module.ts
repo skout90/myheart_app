@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
 import { SchedulePage } from '../pages/schedule/schedule';
+import { DrugboxModal } from '../pages/drugbox/drugbox';
 
 import { UserService } from '../providers';
 import { LoginService } from '../providers';
@@ -45,7 +46,8 @@ const cloudSettings: CloudSettings = {
     HomePage,
     TabsPage,
     UserPage,
-    SchedulePage
+    SchedulePage,
+    DrugboxModal
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ const cloudSettings: CloudSettings = {
     HomePage,
     TabsPage,
     UserPage,
-    SchedulePage
+    SchedulePage,
+    DrugboxModal
   ],
   providers: [
     Facebook,
