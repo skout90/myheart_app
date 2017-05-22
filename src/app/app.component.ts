@@ -28,7 +28,6 @@ export class MyApp {
   ) {
 
     platform.ready().then(() => {
-
       let env = this;
       /*NativeStorage.getItem('user')
         .then( function (data) {
@@ -43,10 +42,6 @@ export class MyApp {
 
       //StatusBar.styleDefault();
     });
-    this.pages = {
-      'UserPage': UserPage,
-      'SchedulePage': SchedulePage
-    };
   }
 
   openPage(pageName) {
