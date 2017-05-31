@@ -7,7 +7,7 @@ import { loginResult } from '../../models';
 
 import { UserPage } from '../user/user';
 import { AboutPage } from '../about/about';
-import { DrugboxModal } from '../drugbox/drugbox';
+import { PrescriptionModal } from '../prescription/prescription';
 
 import { Facebook } from '@ionic-native/Facebook';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -108,8 +108,8 @@ export class HomePage implements OnInit {
 		alert(JSON.stringify(this.login))
 	}
 
-	openDrugboxModal() {
-		const modal = this.modalCtrl.create(DrugboxModal);
+	openPrescriptionModal() {
+		const modal = this.modalCtrl.create(PrescriptionModal);
 		modal.present();
 	}
 

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button (click)="closeModal()" ion-button icon-only>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>약품함</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>약품명</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <form #prescriptionForm="ngForm" (ngSubmit)="onSubmit(prescriptionForm)">
+    <ion-item class="timeDivision" *ngFor="let timeDivision of timeDivisions">
+      <ion-label>{{timeDivision.label}}</ion-label>
+      <ion-checkbox name="{{timeDivision.id}}" [(ngModel)]="timeDivision.check"></ion-checkbox>
+    </ion-item>
+    <button>작성 완료</button>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <small>약품을 등록해주세요!</small>
+  </ion-toolbar>
+</ion-footer>

@@ -9,11 +9,12 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
 import { SchedulePage } from '../pages/schedule/schedule';
-import { DrugboxModal } from '../pages/drugbox/drugbox';
+import { PrescriptionModal } from '../pages/prescription/prescription';
 
 import { UserService } from '../providers';
 import { LoginService } from '../providers';
 import { ScheduleService } from '../providers';
+import { PrescriptionService } from '../providers';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -47,7 +48,7 @@ const cloudSettings: CloudSettings = {
     TabsPage,
     UserPage,
     SchedulePage,
-    DrugboxModal
+    PrescriptionModal
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,7 @@ const cloudSettings: CloudSettings = {
     TabsPage,
     UserPage,
     SchedulePage,
-    DrugboxModal
+    PrescriptionModal
   ],
   providers: [
     Facebook,
@@ -73,6 +74,7 @@ const cloudSettings: CloudSettings = {
     ScheduleService,
     StatusBar,
     SplashScreen,
+    PrescriptionService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
